@@ -143,7 +143,7 @@
     d. `WHERE author = $1 AND book_id = $2`
     
     *Созданные индексы:*
-``` 
+```sql
     CREATE INDEX books_title_idx ON t_books(title);
     CREATE INDEX books_category_idx ON t_books(category);
     CREATE INDEX books_category_author_idx ON t_books(category, author);
@@ -151,6 +151,10 @@
     
     *Объясните ваше решение:*
     при фильтрации по одному полю создаём соответствующий индеск по одному полю, при фильтрации по двум полям - индекс на двух полях
+
+
+
+
 
 4.  Протестируйте созданные индексы.
     
@@ -165,6 +169,7 @@
     EXPLAIN ANALYZE
     SELECT * FROM t_books WHERE title ILIKE 'Relational%';
     ```
+в
     
     *План выполнения:*
     
